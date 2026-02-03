@@ -1,24 +1,247 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cal Day Ham | Web Developer</title>
-    <meta name="description" content="Cal Day Ham - Web Developer">
+    <title>Cal Day | Static Web Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        /* Simple Fade In Animation */
+        .fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <h1>Cal Day Ham | WIP</h1>
-        <p>Web Developer</p>
-    </header>
-    <main>
-        <section>
-            <h2>Welcome</h2>
-            <p>Thanks for visiting caldayham.design</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2026 Cal Day Ham</p>
+<body class="bg-white text-slate-800 antialiased selection:bg-indigo-100 selection:text-indigo-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-tight text-slate-900">calday.</a>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-slate-500">
+                <a href="#services" class="hover:text-indigo-600 transition-colors">Services</a>
+                <a href="#pricing" class="hover:text-indigo-600 transition-colors">Pricing</a>
+            </div>
+            <a href="#contact" class="px-5 py-2.5 bg-slate-900 text-white text-sm font-medium rounded-full hover:bg-slate-800 transition-all hover:shadow-lg">
+                Start Project
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-6 max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center gap-12 md:gap-20">
+            <!-- Text Content -->
+            <div class="md:w-1/2 text-center md:text-left fade-in-up">
+                <div class="inline-block px-3 py-1 bg-indigo-50 text-indigo-600 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
+                    New Era of Web Design
+                </div>
+                <h1 class="text-5xl md:text-6xl font-bold text-slate-900 leading-[1.1] mb-6 tracking-tight">
+                    Beautifully simple <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-500">static websites.</span>
+                </h1>
+                <p class="text-lg text-slate-500 mb-8 leading-relaxed max-w-md mx-auto md:mx-0">
+                    I build ultra-fast, unmanaged and fully managed websites using AI-powered workflows. Clean code, premium design, fraction of the cost.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#pricing" class="px-8 py-3.5 bg-indigo-600 text-white font-medium rounded-xl hover:bg-indigo-700 transition-colors shadow-indigo-200 shadow-xl">
+                        View Pricing
+                    </a>
+                    <a href="#contact" class="px-8 py-3.5 bg-white text-slate-700 border border-slate-200 font-medium rounded-xl hover:bg-slate-50 transition-colors">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+
+            <!-- Image/Visual -->
+            <div class="md:w-1/2 w-full fade-in-up delay-200">
+                <div class="relative max-w-md mx-auto">
+                    <!-- Decor elements -->
+                    <div class="absolute -top-4 -right-4 w-24 h-24 bg-rose-100 rounded-full blur-2xl opacity-60"></div>
+                    <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-indigo-100 rounded-full blur-2xl opacity-60"></div>
+                    
+                    <img src="https://cf.design/assets/cal-fynn-outdoor-design.jpg" alt="Cal Day" class="relative z-10 w-full h-auto object-cover rounded-[2rem] shadow-2xl rotate-1 hover:rotate-0 transition-transform duration-500 ease-out border border-white/50">
+                    
+                    <!-- Floating Card -->
+                    <div class="absolute bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 z-20 hidden md:block animate-bounce" style="animation-duration: 3s;">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600">⚡</div>
+                            <div>
+                                <p class="text-xs text-slate-500 font-medium">Performance</p>
+                                <p class="text-sm font-bold text-slate-900">100/100 Score</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section id="services" class="py-20 bg-slate-50/50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 max-w-2xl mx-auto fade-in-up">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Crafted for impact</h2>
+                <p class="text-slate-500">Modern problems require modern solutions. I combine design aesthetics with AI efficiency.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 fade-in-up delay-100">
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">AI-Powered Speed</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        By leveraging AI for coding, I cut development time in half. You get a premium, hand-polished result without the agency wait times.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-12 h-12 bg-rose-50 rounded-xl flex items-center justify-center text-rose-600 mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Visual Identity</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        Need more than a site? I create matching graphics, digital posters, and menus to ensure your brand looks consistent everywhere.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-12 h-12 bg-violet-50 rounded-xl flex items-center justify-center text-violet-600 mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Static Security</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        No heavy databases to hack. Static sites are secure by default, load instantly, and are perfect for portfolios and small businesses.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 px-6 max-w-5xl mx-auto">
+        <div class="text-center mb-16 fade-in-up">
+            <h2 class="text-3xl font-bold text-slate-900 mb-4">Simple Pricing</h2>
+            <p class="text-slate-500">Choose how you want to handle your digital presence.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-start fade-in-up delay-200">
+            <!-- DIY Plan -->
+            <div class="bg-white p-10 rounded-[2rem] border border-slate-200 hover:border-indigo-100 transition-colors relative group">
+                <div class="absolute top-0 right-0 bg-slate-100 text-slate-600 text-xs font-bold px-4 py-2 rounded-bl-2xl rounded-tr-2xl">
+                    UNMANAGED
+                </div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-2">Code Only</h3>
+                <div class="flex items-baseline gap-1 mb-6">
+                    <span class="text-4xl font-bold text-slate-900">$Low</span>
+                    <span class="text-slate-400 font-medium">/ one-time</span>
+                </div>
+                <p class="text-slate-500 mb-8 text-sm">Perfect if you know your way around GitHub and Netlify.</p>
+                
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center text-sm text-slate-600">
+                        <span class="w-5 h-5 bg-slate-100 text-slate-600 rounded-full flex items-center justify-center mr-3 text-xs">✓</span>
+                        Full Source Code
+                    </li>
+                    <li class="flex items-center text-sm text-slate-600">
+                        <span class="w-5 h-5 bg-slate-100 text-slate-600 rounded-full flex items-center justify-center mr-3 text-xs">✓</span>
+                        You own the files
+                    </li>
+                    <li class="flex items-center text-sm text-slate-600">
+                        <span class="w-5 h-5 bg-slate-100 text-slate-600 rounded-full flex items-center justify-center mr-3 text-xs">✓</span>
+                        Zero monthly fees
+                    </li>
+                </ul>
+                <a href="#contact" class="block w-full py-4 rounded-xl border-2 border-slate-100 text-slate-900 font-bold text-center hover:border-slate-900 transition-colors">
+                    I'll Host Myself
+                </a>
+            </div>
+
+            <!-- Managed Plan -->
+            <div class="bg-slate-900 p-10 rounded-[2rem] text-white shadow-2xl shadow-indigo-200 relative transform md:-translate-y-4">
+                <div class="absolute top-0 right-0 bg-gradient-to-r from-indigo-500 to-violet-500 text-white text-xs font-bold px-4 py-2 rounded-bl-2xl rounded-tr-2xl">
+                    POPULAR
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Fully Managed</h3>
+                <div class="flex items-baseline gap-1 mb-6">
+                    <span class="text-4xl font-bold">$Custom</span>
+                    <span class="text-slate-400 font-medium">/ month</span>
+                </div>
+                <p class="text-slate-400 mb-8 text-sm">Total peace of mind. From domain to design, I handle it all.</p>
+                
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center text-sm text-slate-300">
+                        <span class="w-5 h-5 bg-indigo-500 text-white rounded-full flex items-center justify-center mr-3 text-xs">✓</span>
+                        Design & Development
+                    </li>
+                    <li class="flex items-center text-sm text-slate-300">
+                        <span class="w-5 h-5 bg-indigo-500 text-white rounded-full flex items-center justify-center mr-3 text-xs">✓</span>
+                        Hosting & Domain Costs Included
+                    </li>
+                    <li class="flex items-center text-sm text-slate-300">
+                        <span class="w-5 h-5 bg-indigo-500 text-white rounded-full flex items-center justify-center mr-3 text-xs">✓</span>
+                        Monthly Content Updates
+                    </li>
+                    <li class="flex items-center text-sm text-slate-300">
+                        <span class="w-5 h-5 bg-indigo-500 text-white rounded-full flex items-center justify-center mr-3 text-xs">✓</span>
+                        Graphics & Brand Assets
+                    </li>
+                </ul>
+                <a href="#contact" class="block w-full py-4 rounded-xl bg-indigo-600 text-white font-bold text-center hover:bg-indigo-500 transition-colors">
+                    Get Started
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contact" class="bg-white border-t border-slate-100 pt-20 pb-10">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-slate-900 mb-8">Ready to launch?</h2>
+            
+            <div class="flex flex-col md:flex-row gap-4 justify-center mb-16 fade-in-up">
+                <a href="mailto:caldayham@gmail.com" class="flex items-center p-4 bg-slate-50 rounded-2xl hover:bg-indigo-50 transition-colors group">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-lg shadow-sm group-hover:scale-110 transition-transform">✉️</div>
+                    <div class="ml-4 text-left">
+                        <div class="text-xs font-bold text-slate-400 uppercase tracking-wide">Email</div>
+                        <div class="text-slate-900 font-medium">caldayham@gmail.com</div>
+                    </div>
+                </a>
+
+                <a href="tel:+16505217269" class="flex items-center p-4 bg-slate-50 rounded-2xl hover:bg-green-50 transition-colors group">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-lg shadow-sm group-hover:scale-110 transition-transform">📞</div>
+                    <div class="ml-4 text-left">
+                        <div class="text-xs font-bold text-slate-400 uppercase tracking-wide">Phone</div>
+                        <div class="text-slate-900 font-medium">+1 (650) 521-7269</div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="text-slate-400 text-sm">
+                &copy; 2024 Cal Day. Design powered by Artificial Intelligence.
+            </div>
+        </div>
     </footer>
+
 </body>
 </html>
